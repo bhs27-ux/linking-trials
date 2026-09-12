@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/components/header.js" defer></script>
+</head>
+<body>
+  <shared-header></shared-header>
+  
+  <main>
+    <h1>Page Content</h1>
+  </main>
+</body>
+</html>
+
+
+
+class SharedHeader extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <header>
+        <nav>
+          <a href="/index.html">Home</a>
+          <a href="/hub/index.html">Hub</a>
+          <a href="/hub/page-one.html">Page One</a>
+        </nav>
+      </header>
+    `;
+  }
+}
+customElements.define('shared-header', SharedHeader);
